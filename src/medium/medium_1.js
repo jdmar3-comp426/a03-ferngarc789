@@ -52,5 +52,6 @@ export function getMedian(array) {
  */
 export function getStatistics(array) {
 
+    return {}
 }
 
