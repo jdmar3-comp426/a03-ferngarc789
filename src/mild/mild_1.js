@@ -71,13 +71,14 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
+    let array = [1, 1, 2, 2, 4, "what"]
     let keysTwo = new Set(array)
     let keys = Array.from(keysTwo)
     let dict = {}
-    for (let i = 0; i < keys.size; i++) {
+    for (let i = 0; i < keys.length; i++) {
         let key = keys[i]
         let counter = 0
-        for (let n = 0; n < array.size; n++) {
+        for (let n = 0; n < array.length; n++) {
             if (array[n] == key) {
                 counter += 1
             }
