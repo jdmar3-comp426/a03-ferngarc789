@@ -28,13 +28,11 @@ export function getSum(array) {
 export function getMedian(array) {
 
     let y = []
-    let copy = Object.assign(array)
+    let copy = Object.assign({}, array)
     for (let i = 0; i < copy.length; i++) {
         y[i] = Math.min(array)
         array.splice(array.indexOf(Math.min(array)), 1)
     }
-    return y
-
 
     if (array.length % 2 == 0) {
         return ((array[array.length / 2] + array[(array.length / 2) - 1])) / 2
