@@ -26,18 +26,25 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
-
     let y = []
     let copy = Object.assign({}, array)
-    for (let i = 0; i < copy.length; i++) {
-        y[i] = Math.min(array)
-        array.splice(array.indexOf(Math.min(array)), 1)
+
+    for (let i = 0; i < Object.keys(copy).length; i++) {
+        let lowest = array[0]
+
+        for (let n = 0; n < array.length; n++) {
+            if (array[n] < lowest) {
+                lowest = array[n]
+            }
+        }
+        y[i] = lowest
+        array.splice(array.indexOf(lowest), 1)
     }
 
-    if (array.length % 2 == 0) {
-        return ((array[array.length / 2] + array[(array.length / 2) - 1])) / 2
+    if (y.length % 2 == 0) {
+        return ((y[y.length / 2] + y[(y.length / 2) - 1]) / 2)
     } else {
-        return (array[(array.length / 2) + .5])
+        return (y[(y.length / 2) + .5])
 
     }
 }
