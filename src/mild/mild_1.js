@@ -71,7 +71,6 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-    let array = [1, 1, 2, 2, 4, "what"]
     let keysTwo = new Set(array)
     let keys = Array.from(keysTwo)
     let dict = {}
