@@ -53,8 +53,8 @@ export function maxAndMin(numbers) {
 
     }
     let returning = {
-        min: lowest,
-        max: highest
+        max: Number(highest),
+        min: Number(lowest)
     }
     return returning
 
@@ -71,7 +71,8 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-    let keys = Array.from(new Set(array))
+    let keysTwo = new Set(array)
+    let keys = Array.from(keysTwo)
     let dict = {}
     for (let i = 0; i < keys.size; i++) {
         let key = keys[i]
