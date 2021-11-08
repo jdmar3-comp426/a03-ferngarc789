@@ -6,7 +6,10 @@
  * returns: { type: 'number', value: 4 }
  */
 export function identifyVariable(variable) {
-
+   let returning = {
+      type: typeof (variable),
+      value: variable
+   }
 }
 
 
@@ -24,6 +27,11 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
+   let arraytoReturn = []
+   for (let i = 0; i < array.size; i++) {
+      arraytoReturn[i] = identifyVariable(array[i])
+   }
+   return arraytoReturn
 
 }
 
