@@ -10,6 +10,7 @@ export function identifyVariable(variable) {
       type: typeof (variable),
       value: variable
    }
+   return returning
 }
 
 
