@@ -26,11 +26,11 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
-    return Math.median(array)
+
     let y = []
     let copy = Object.assign(array)
     for (let i = 0; i < copy.length; i++) {
-        y[i] = array.min
+        y[i] = Math.min(array)
         array.splice(array.indexOf(min(array)), 1)
     }
     return y
