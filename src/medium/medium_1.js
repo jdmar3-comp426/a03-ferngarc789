@@ -31,7 +31,7 @@ export function getMedian(array) {
     let copy = Object.assign(array)
     for (let i = 0; i < copy.length; i++) {
         y[i] = Math.min(array)
-        array.splice(array.indexOf(min(array)), 1)
+        array.splice(array.indexOf(Math.min(array)), 1)
     }
     return y
 
