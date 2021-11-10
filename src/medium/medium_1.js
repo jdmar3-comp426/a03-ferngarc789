@@ -104,16 +104,12 @@ export function getStatistics(array) {
     newObject["max"] = (returning.max)
 
 
-    newObject["variance"] = i
-    /*i.map(function (element) {
+    newObject["variance"] = i.map(function (element) {
         return Math.pow(Number(getSum(i) / i.length) - element, 2)
     }).reduce(function sum(m, v) {
         m += v;
         return m;
     }, 0) / i.length;
-
-
-*/
 
 
     return newObject
