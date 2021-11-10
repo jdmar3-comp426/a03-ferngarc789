@@ -1,3 +1,4 @@
+import { maxAndMin } from "../mild/mild_1.js";
 import { variance } from "./data/stats_helpers.js";
 
 /**
@@ -69,7 +70,14 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
-
-    return {}
+    let newObject = {}
+    newObject["length"] = array.length
+    newObject["sum"] = getSum(array)
+    newObject["mean"] = getSum(array) / array.length
+    newObject["median"] = getMedian(array)
+    newObject["min"] = maxAndMin(array).min
+    newObject["max"] = maxAndMin(array).max
+    newObject["variance"] = variance(array)
+    return newObject
 }
 
