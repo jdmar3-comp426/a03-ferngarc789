@@ -103,10 +103,7 @@ export function getStatistics(array) {
     newObject["min"] = returning["min"]
     newObject["max"] = (returning.max)
 
-    let i = [];
-    for (let n = 0; n < array.length; n++) {
-        i[n] = array[n];
-    }
+
     newObject["variance"] = i
     /*i.map(function (element) {
         return Math.pow(Number(getSum(i) / i.length) - element, 2)
