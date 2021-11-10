@@ -70,13 +70,27 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
+    let lowest = array[0]
+    let highest = array[0]
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > highest) {
+            highest = array[i]
+        } else if (array[i] < lowest) {
+            lowest = array[i]
+        }
+
+    }
+    let returning = {
+        max: Number(highest),
+        min: Number(lowest)
+    }
     let newObject = {}
     newObject["length"] = array.length
     newObject["sum"] = getSum(array)
     newObject["mean"] = getSum(array) / array.length
     newObject["median"] = getMedian(array)
-    newObject["min"] = maxAndMin(array)["max"]
-    newObject["max"] = maxAndMin(array).max
+    newObject["min"] = returning["min"]
+    newObject["max"] = returning.max
     newObject["variance"] = variance(array)
     return newObject
 }
