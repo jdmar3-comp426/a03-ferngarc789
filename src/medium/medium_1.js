@@ -92,13 +92,7 @@ export function getStatistics(array) {
     newObject["median"] = getMedian(array)
     newObject["min"] = returning["min"]
     newObject["max"] = returning.max
-    newObject["variance"] = array.map(function (sample) {
-        return Math.pow(newObject.mean - sample, 2);
-    })
-        .reduce(function sum(m, v) {
-            m += v;
-            return m;
-        }, 0) / array.length;
+    newObject["variance"] = variance(array, newObject.mean)
     return newObject
 }
 
