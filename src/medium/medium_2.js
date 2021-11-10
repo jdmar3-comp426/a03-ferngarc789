@@ -21,14 +21,14 @@ see under the methods section
  */
 let highway = 0
 let city = 0
-
+    (mpg_data).forEach(averging)
 function averging(element) {
     highway += element["highway"]
     city += element["city"]
 }
 export const allCarStats = {
 
-    avgMpg: (mpg_data).forEach(averging),
+    avgMpg: highway,
     allYearStats: undefined,
     ratioHybrids: undefined,
 };
