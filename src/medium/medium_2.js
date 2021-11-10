@@ -19,8 +19,16 @@ see under the methods section
  *
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
+let highway = 0
+let city = 0
+
+function averging(element) {
+    highway += element["highway"]
+    city += element["city"]
+}
 export const allCarStats = {
-    avgMpg: (mpg_data),
+
+    avgMpg: (mpg_data).forEach(averging),
     allYearStats: undefined,
     ratioHybrids: undefined,
 };
