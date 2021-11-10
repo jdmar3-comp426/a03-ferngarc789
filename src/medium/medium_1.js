@@ -75,7 +75,7 @@ export function getStatistics(array) {
     newObject["sum"] = getSum(array)
     newObject["mean"] = getSum(array) / array.length
     newObject["median"] = getMedian(array)
-    newObject["min"] = maxAndMin(array).min
+    newObject["min"] = maxAndMin(array)["max"]
     newObject["max"] = maxAndMin(array).max
     newObject["variance"] = variance(array)
     return newObject
