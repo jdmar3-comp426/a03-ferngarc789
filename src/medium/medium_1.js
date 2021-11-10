@@ -111,7 +111,7 @@ export function getStatistics(array) {
         return m;
     }, 0) / i.length;
 
-
+    newObject["standard_deviation"] = Math.sqrt(newObject["variance"])
     return newObject
 }
 
