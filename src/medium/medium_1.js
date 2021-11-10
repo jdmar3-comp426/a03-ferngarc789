@@ -104,7 +104,7 @@ export function getStatistics(array) {
     for (let n = 0; n < array.length; n++) {
         i[n] = array[n];
     }
-    newObject["variance"] = i
+    newObject["variance"] = array
     /*i.map(function (element) {
         return Math.pow(Number(getSum(i) / i.length) - element, 2)
     }).reduce(function sum(m, v) {
