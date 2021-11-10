@@ -103,7 +103,7 @@ export function getStatistics(array) {
 
 
     let what = array.map(function (sample) {
-        let whatTwo = Math.pow(newObject.mean - sample, 2);
+        Math.pow(newObject.mean - sample, 2);
     })
         .reduce(function sum(m, v) {
             m += v;
