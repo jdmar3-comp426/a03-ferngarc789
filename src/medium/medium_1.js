@@ -100,17 +100,13 @@ export function getStatistics(array) {
     newObject["min"] = returning["min"]
     newObject["max"] = returning.max
 
+    newObject["variance"] = array.map(function (element) {
+        return Math.pow(newObject.mean - element, 2)
+    }).reduce(function sum(m, v) {
+        m += v;
+        return m;
+    }, 0) / array.length;
 
-
-    let what = array.map(function (sample) {
-        return Math.pow(newObject.mean - sample, 2);
-    })
-        .reduce(function sum(m, v) {
-            m += v;
-            return m;
-        }, 0) / array.length;
-
-    newObject["variance"] = what
 
 
 
