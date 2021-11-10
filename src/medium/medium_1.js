@@ -88,7 +88,10 @@ export function getStatistics(array) {
 
 
 
-
+    let i = [];
+    for (let n = 0; n < array.length; n++) {
+        i[n] = array[n];
+    }
 
 
 
@@ -104,7 +107,7 @@ export function getStatistics(array) {
     for (let n = 0; n < array.length; n++) {
         i[n] = array[n];
     }
-    newObject["variance"] = array
+    newObject["variance"] = i
     /*i.map(function (element) {
         return Math.pow(Number(getSum(i) / i.length) - element, 2)
     }).reduce(function sum(m, v) {
