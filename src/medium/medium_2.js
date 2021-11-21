@@ -19,16 +19,10 @@ see under the methods section
  *
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
-let highway = 0
-let city = 0
-let y = (mpg_data).forEach(averging)
-function averging(element) {
-    highway += element["highway"]
-    city += element["city"]
-}
+
 export const allCarStats = {
 
-    avgMpg: highway,
+    avgMpg: getStatistics(mpg_data).mean,
     allYearStats: undefined,
     ratioHybrids: undefined,
 };
