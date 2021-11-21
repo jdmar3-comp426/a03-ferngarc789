@@ -22,7 +22,7 @@ see under the methods section
 
 export const allCarStats = {
 
-    avgMpg: mpg_data,
+    avgMpg: mpg_data.city,
     allYearStats: undefined,
     ratioHybrids: undefined,
 };
