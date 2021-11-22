@@ -15,7 +15,8 @@
  *                from calling the function
  */
 export const repeat = (fn, n, ...params) => {
-    fn(params)
+    x = fn(params)
+    console.log(x)
     /*
     let returnArray = []
     for (let i = 0; i < n; i++) {
