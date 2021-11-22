@@ -22,7 +22,7 @@ see under the methods section
 
 export const allCarStats = {
 
-    avgMpg: mpg_data.forEach(element => element["city"]),
+    avgMpg: mpg_data,
     allYearStats: undefined,
     ratioHybrids: undefined,
 };
