@@ -24,7 +24,7 @@ export const allCarStats = {
 
     avgMpg: {"city": getStatistics(mpg_data.map(element => element.city_mpg)).mean, "highway": getStatistics(mpg_data.map(element => element.highway_mpg)).mean},
     allYearStats: getStatistics(mpg_data.map(element => element.year)),
-    ratioHybrids: getStatistics(mpg_data.map(element => element.hybrid)),
+    ratioHybrids: mpg_data,
 };
 
 
