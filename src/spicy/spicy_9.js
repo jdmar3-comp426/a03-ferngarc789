@@ -15,6 +15,8 @@
  *                from calling the function
  */
 export const repeat = (fn, n, ...params) => {
+    fn(params)
+    /*
     let returnArray = []
     for (let i = 0; i < n; i++) {
         returnArray[i] = (fn(params))
@@ -24,6 +26,7 @@ export const repeat = (fn, n, ...params) => {
         fixing[n] = returnArray[n][0]
     }
     return fixing
+    */
 
 };
 
