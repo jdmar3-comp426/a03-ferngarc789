@@ -97,7 +97,14 @@ export const everyEven = (arr, test) => {
     for (let i = 0; i < arr.length; i++) {
         x[i] = test(arr[i])
     }
-    return x
+    for (let n = 0; n < x.length; n++) {
+        if (n % 2 == 0) {
+            if (x[n] == false) {
+                return false
+            }
+        }
+    }
+    return true
 };
 
 
