@@ -18,11 +18,11 @@ export const repeat = (fn, n, ...params) => {
     
     let returnArray = []
     for (let i = 0; i < n; i++) {
-        returnArray[i] = (fn(params))
+        console.log(fn(params))
     }
     let fixing = []
     for (let n = 0; n < returnArray.length; n++) {
-        fixing[n] = returnArray[n][0]
+        fixing[n] = returnArray[n]
     }
     return fixing
     
