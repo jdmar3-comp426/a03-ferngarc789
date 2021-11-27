@@ -18,7 +18,7 @@ export const repeat = (fn, n, ...params) => {
     
     let returnArray = []
     for (let i = 0; i < n; i++) {
-        returnArray.push(fn(params))
+        returnArray.push(fn(...params))
     }
     return returnArray
     let fixing = []
