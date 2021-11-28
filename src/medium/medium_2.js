@@ -99,6 +99,7 @@ export const moreStats = {
                     placeHolder[mpg_data[i].make].push(mpg_data[i].id);
                 }
             }
+            return placeHolder
         }
     ),
     avgMpgByYearAndHybrid: undefined
