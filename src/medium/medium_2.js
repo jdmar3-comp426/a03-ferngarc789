@@ -88,10 +88,10 @@ export const allCarStats = {
 export const moreStats = {
     makerHybrids: mpg_data.reduce(
         function() {
-            toReturn = []
-            toAdd = {} // "make": carmake
-            carMakes = [] // "hybrids": carMakes
-            placeHolder = {}
+            let toReturn = []
+            let toAdd = {} // "make": carmake
+            let carMakes = [] // "hybrids": carMakes
+            let placeHolder = {}
             for (let i = 0; i < mpg_data.length; i++) {
                 if (!(mpg_data[i].make in placeHolder)) {
                     placeholder[mpg_data[i].make] = [mpg_data[i].id];
