@@ -102,5 +102,5 @@ export const moreStats = {
             return placeHolder
         }
     ),
-    avgMpgByYearAndHybrid: undefined
+    avgMpgByYearAndHybrid: 12
 };
