@@ -102,5 +102,20 @@ export const moreStats = {
             return placeHolder
         }
     ),
-    avgMpgByYearAndHybrid: mpg_data[0]
+    avgMpgByYearAndHybrid: mpg_data.reduce(
+        function() {
+            let toReturn = []
+            let toAdd = {} // "make": carmake
+            let carMakes = [] // "hybrids": carMakes
+            let placeHolder = {}
+            for (let i = 0; i < mpg_data.length; i++) {
+                if (!(mpg_data[i].make in placeHolder)) {
+                    placeHolder[mpg_data[i].make] = [mpg_data[i].id];
+                } else {
+                    placeHolder[mpg_data[i].make].push(mpg_data[i].id);
+                }
+            }
+            return placeHolder
+        }
+    )
 };
