@@ -102,5 +102,5 @@ export const moreStats = {
             return placeHolder
         }
     ),
-    avgMpgByYearAndHybrid: mpg_data.length
+    avgMpgByYearAndHybrid: mpg_data[0]
 };
