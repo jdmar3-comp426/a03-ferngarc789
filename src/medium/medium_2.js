@@ -94,9 +94,9 @@ export const moreStats = {
             let placeHolder = {}
             for (let i = 0; i < mpg_data.length; i++) {
                 if (!(mpg_data[i].make in placeHolder)) {
-                    placeholder[mpg_data[i].make] = [mpg_data[i].id];
+                    placeHolder[mpg_data[i].make] = [mpg_data[i].id];
                 } else {
-                    placeholder[mpg_data[i].make].push(mpg_data[i].id);
+                    placeHolder[mpg_data[i].make].push(mpg_data[i].id);
                 }
             }
         }
