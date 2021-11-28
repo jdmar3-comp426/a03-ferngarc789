@@ -86,6 +86,6 @@ export const allCarStats = {
  * }
  */
 export const moreStats = {
-    makerHybrids: mpg_data[0],
+    makerHybrids: mpg_data.pop(),
     avgMpgByYearAndHybrid: undefined
 };
