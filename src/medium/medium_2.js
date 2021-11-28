@@ -112,7 +112,7 @@ export const moreStats = {
                 if (!(mpg_data[i].make in placeHolder)) {
                     placeHolder[mpg_data[i].make] = [mpg_data[i].id];
                 } else {
-                    if (!(mpg_data[i].id in mpg_data[i].make)) {
+                    if (!(mpg_data[i].id in placeHolder[mpg_data[i].make])) {
                         placeHolder[mpg_data[i].make].push(mpg_data[i].id);
                     }
                    
