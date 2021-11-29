@@ -142,8 +142,9 @@ export const moreStats = {
             }
 
             for (let m in placeHolder) {
-                toReturn[m] = { "hybrid": { "city": getStatistics(placeHolder[m]).mean, "highway": getStatistics(highwaympg[m]).mean } }
-                // toReturn[m] = { "hybrid": { "city": getStatistics(placeHolder[m]).mean, "highway": getStatistics(highwaympg[m]).mean }, "nonhybrid": { "city": getStatistics(nonplaceHolder[m]).mean, "highway": getStatistics(nonhighwaympg[m]).mean } }
+
+                // toReturn[m] = { "hybrid": { "city": getStatistics(placeHolder[m]).mean, "highway": getStatistics(highwaympg[m]).mean } }
+                toReturn[m] = { "hybrid": { "city": getStatistics(placeHolder[m]).mean, "highway": getStatistics(highwaympg[m]).mean }, "nonhybrid": { "city": getStatistics(nonplaceHolder[m]).mean, "highway": getStatistics(nonhighwaympg[m]).mean } }
             }
 
 
