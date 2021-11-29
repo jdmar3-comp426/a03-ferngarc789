@@ -80,9 +80,8 @@ export function searchName(car_data, searchTerm) {
 
     for (let i = 0; i < car_data.length; i++) {
         // i is each entry.
-        if (car_data[i].id.contains(searchTerm)) {
+        if (car_data[i].id.includes(searchTerm)) {
             returningArray.push(car_data[i])
-
         }
     }
 
