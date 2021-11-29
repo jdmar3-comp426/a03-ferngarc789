@@ -152,29 +152,3 @@ export const moreStats = {
         }
     )
 };
-
-/*
-* {
-    *     2020: {
-    *         hybrid: {
-    *             city: average city mpg,
-    *             highway: average highway mpg
-    *         },
-    * notHybrid: {
-    * city: average city mpg,
-    * highway: average highway mpg
-        *         }
-    *     },
-    * 2021: {
-    * hybrid: {
-    * city: average city mpg,
-    * highway: average highway mpg
-            *         },
-    * notHybrid: {
-    * city: average city mpg,
-    * highway: average highway mpg
-            *         }
-    *     },
-    *
-    * }
-    * /
