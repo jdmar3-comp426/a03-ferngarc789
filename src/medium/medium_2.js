@@ -102,32 +102,30 @@ export const moreStats = {
             for (let m in placeHolder) {
                 toReturn.push({ "make": m, "hybrids": placeHolder[m] })
             }
-
-            return toReturn
-        }
-    ),
-    avgMpgByYearAndHybrid: mpg_data.reduce(
-        function () {
-            let toReturn = []
-            let toAdd = {} // "make": carmake
-            let carMakes = [] // "hybrids": carMakes
-            let placeHolder = {}
-            for (let i = 0; i < mpg_data.length; i++) {
-                if (!(mpg_data[i].make in placeHolder)) {
-                    placeHolder[mpg_data[i].make] = [mpg_data[i].id];
-                } else {
-                    placeHolder[mpg_data[i].make].push(mpg_data[i].id);
-                }
-            }
-            for (let m in placeHolder) {
-                toReturn.push({ "make": m, "hybrids": placeHolder[m] })
-            }
             toReturn.sort(
                 function (firstOne, SecondOne) {
                     return SecondOne.hybrids.length - firstOne.hybrids.length
                 }
             )
             return toReturn
+        }
+    ),
+    avgMpgByYearAndHybrid: mpg_data.reduce(
+        function () {
+            let toReturn = []
+            let stats = [] // will be a list with two lists each containing the respective highway vs nothypbrid.
+            let hybridnonhybridstats = []
+            let placeHolder = {} // lets store in this the city_mpg if not hybrid
+            for (let i = 0; i < mpg_data.length; i++) {
+                if (mpg_data[i].hybrid) {
+                    if (!(mpg_data[i].year in placeHolder)) {
+                        placeHolder[mpg_data[i].year] = [mpg_data[i].city_mpg];
+                    } else {
+                        placeHolder[mpg_data[i].year].push(mpg_data[i].city_mpg);
+                    }
+                }
+            }
+            return placeHolder
         }
     )
 };
