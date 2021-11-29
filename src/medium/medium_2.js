@@ -89,8 +89,6 @@ export const moreStats = {
     makerHybrids: mpg_data.reduce(
         function () {
             let toReturn = []
-            let toAdd = {} // "make": carmake
-            let carMakes = [] // "hybrids": carMakes
             let placeHolder = {}
             for (let i = 0; i < mpg_data.length; i++) {
                 if (!(mpg_data[i].make in placeHolder)) {
@@ -113,8 +111,6 @@ export const moreStats = {
     avgMpgByYearAndHybrid: mpg_data.reduce(
         function () {
             let toReturn = {}
-            let stats = [] // will be a list with two lists each containing the respective highway vs nothypbrid.
-            let hybridnonhybridstats = []
             let placeHolder = {} // lets store in this the city_mpg if  hybrid
             let highwaympg = {} // Store highway mpg for hybrid
             let nonplaceHolder = {} // non hybrid city_mpg
@@ -144,7 +140,7 @@ export const moreStats = {
                     }
                 }
             }
-            return getStatistics(placeHolder[m]).mean
+            return getStatistics(placeHolder[0]).mean
             for (let m in placeHolder) {
                 toReturn[m] = { "hybrid": { "city": getStatistics(placeHolder[m]).mean, "highway": getStatistics(highwaympg[m]).mean }, "nonhybrid": { "city": getStatistics(nonplaceHolder[m]).mean, "highway": getStatistics(nonhighwaympg[m]).mean } }
             }
