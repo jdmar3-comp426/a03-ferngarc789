@@ -22,7 +22,7 @@ see under the methods section
 
 export const allCarStats = {
 
-    avgMpg: {"city": getStatistics(mpg_data.map(element => element.city_mpg)).mean, "highway": getStatistics(mpg_data.map(element => element.highway_mpg)).mean},
+    avgMpg: { "city": getStatistics(mpg_data.map(element => element.city_mpg)).mean, "highway": getStatistics(mpg_data.map(element => element.highway_mpg)).mean },
     allYearStats: getStatistics(mpg_data.map(element => element.year)),
     ratioHybrids: (getStatistics(mpg_data.map(element => element.hybrid)).sum) / (getStatistics(mpg_data.map(element => element.hybrid)).length)
 };
@@ -87,7 +87,7 @@ export const allCarStats = {
  */
 export const moreStats = {
     makerHybrids: mpg_data.reduce(
-        function() {
+        function () {
             let toReturn = []
             let toAdd = {} // "make": carmake
             let carMakes = [] // "hybrids": carMakes
@@ -100,13 +100,14 @@ export const moreStats = {
                 }
             }
             for (let m in placeHolder) {
-                toReturn.push({"make": m, "hybrids": placeHolder[m]})
+                toReturn.push({ "make": m, "hybrids": placeHolder[m] })
             }
+
             return toReturn
         }
     ),
     avgMpgByYearAndHybrid: mpg_data.reduce(
-        function() {
+        function () {
             let toReturn = []
             let toAdd = {} // "make": carmake
             let carMakes = [] // "hybrids": carMakes
@@ -119,8 +120,13 @@ export const moreStats = {
                 }
             }
             for (let m in placeHolder) {
-                toReturn.push({"make": m, "hybrids": placeHolder[m]})
+                toReturn.push({ "make": m, "hybrids": placeHolder[m] })
             }
+            toReturn.sort(
+                function (firstOne, SecondOne) {
+                    return firstOne.hybrids.length - SecondOne.hybrids.length
+                }
+            )
             return toReturn
         }
     )
