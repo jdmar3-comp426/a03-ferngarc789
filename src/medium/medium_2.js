@@ -124,7 +124,7 @@ export const moreStats = {
             }
             toReturn.sort(
                 function (firstOne, SecondOne) {
-                    return firstOne.hybrids.length - SecondOne.hybrids.length
+                    return SecondOne.hybrids.length - firstOne.hybrids.length
                 }
             )
             return toReturn
