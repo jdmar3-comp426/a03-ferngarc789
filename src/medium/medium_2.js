@@ -144,6 +144,7 @@ export const moreStats = {
                     }
                 }
             }
+            return getStatistics(placeHolder[m]).mean
             for (let m in placeHolder) {
                 toReturn[m] = { "hybrid": { "city": getStatistics(placeHolder[m]).mean, "highway": getStatistics(highwaympg[m]).mean }, "nonhybrid": { "city": getStatistics(nonplaceHolder[m]).mean, "highway": getStatistics(nonhighwaympg[m]).mean } }
             }
