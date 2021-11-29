@@ -131,7 +131,7 @@ export const moreStats = {
                     }
                 }
             }
-            return placeHolder
+            return highwaympg
         }
     )
 };
