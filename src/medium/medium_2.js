@@ -144,6 +144,7 @@ export const moreStats = {
             for (let m in placeHolder) {
 
                 // "nonhybrid": { "city": getStatistics(nonplaceHolder[m]).mean, "highway": getStatistics(nonhighwaympg[m]).mean } }
+                // getStatistics().mean was taking too long, so I just changed them to use the reduce prototype. 
                 toReturn[m] = { "hybrid": { "city": (placeHolder[m]).reduce((firstElement, secondElement) => firstElement + secondElement) / placeHolder[m].length, "highway": (highwaympg[m]).reduce((firstElement, secondElement) => firstElement + secondElement) / highwaympg[m].length }, "notHybrid": { "city": (nonplaceHolder[m]).reduce((firstElement, secondElement) => firstElement + secondElement) / nonplaceHolder[m].length, "highway": (nonhighwaympg[m]).reduce((firstElement, secondElement) => firstElement + secondElement) / nonhighwaympg[m].length } }
             }
 
