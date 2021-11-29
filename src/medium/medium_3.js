@@ -84,7 +84,11 @@ export function searchName(car_data, searchTerm) {
             returningArray.push(car_data[i])
         }
     }
-
+    returningArray.sort(
+        function (firstOne, SecondOne) {
+            return firstOne.indexOf(searchTerm) - SecodnOne.indexOf(searchTerm)
+        }
+    )
     return returningArray
 }
 
