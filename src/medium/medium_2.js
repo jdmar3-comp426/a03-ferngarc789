@@ -144,7 +144,7 @@ export const moreStats = {
                     }
                 }
             }
-            return nonhighwaympg
+            return nonplaceHolder
         }
     )
 };
