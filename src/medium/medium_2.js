@@ -99,7 +99,10 @@ export const moreStats = {
                     placeHolder[mpg_data[i].make].push(mpg_data[i].id);
                 }
             }
-            return placeHolder
+            for (let m in placeHolder) {
+                toReturn.push({"make": m, "hybrids": placeHolder[m]})
+            }
+            return toReturn
         }
     ),
     avgMpgByYearAndHybrid: mpg_data.reduce(
