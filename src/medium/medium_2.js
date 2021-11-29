@@ -112,7 +112,7 @@ export const moreStats = {
     ),
     avgMpgByYearAndHybrid: mpg_data.reduce(
         function () {
-            let toReturn = []
+            let toReturn = {}
             let stats = [] // will be a list with two lists each containing the respective highway vs nothypbrid.
             let hybridnonhybridstats = []
             let placeHolder = {} // lets store in this the city_mpg if  hybrid
@@ -144,7 +144,37 @@ export const moreStats = {
                     }
                 }
             }
-            return nonplaceHolder
+            for (let m in placeHolder) {
+                toReturn[m] = { "hybrid": { "city": placeHolder[m].mean, "highway": highwaympg[m].mean }, "nonhybrid": { "city": nonplaceHolder[m].mean, "highway": nonhighwaympg[m].mean } }
+            }
+
+            return toReturn
         }
     )
 };
+
+/*
+* {
+    *     2020: {
+    *         hybrid: {
+    *             city: average city mpg,
+    *             highway: average highway mpg
+    *         },
+    * notHybrid: {
+    * city: average city mpg,
+    * highway: average highway mpg
+        *         }
+    *     },
+    * 2021: {
+    * hybrid: {
+    * city: average city mpg,
+    * highway: average highway mpg
+            *         },
+    * notHybrid: {
+    * city: average city mpg,
+    * highway: average highway mpg
+            *         }
+    *     },
+    *
+    * }
+    * /
