@@ -144,7 +144,7 @@ export const moreStats = {
             for (let m in placeHolder) {
 
                 // "nonhybrid": { "city": getStatistics(nonplaceHolder[m]).mean, "highway": getStatistics(nonhighwaympg[m]).mean } }
-                toReturn[m] = { "hybrid": { "city": (placeHolder[m]).reduce((firstElement, secondElement) => firstElement + secondElement) / placeHolder[m].length, "highway": (highwaympg[m]).reduce((firstElement, secondElement) => firstElement + secondElement) / highwaympg[m].length }, "nonhybrid": { "city": (nonplaceHolder[m]).reduce((firstElement, secondElement) => firstElement + secondElement) / nonplaceHolder[m].length, "highway": (nonhighwaympg[m]).reduce((firstElement, secondElement) => firstElement + secondElement) / highwaympg[m].length } }
+                toReturn[m] = { "hybrid": { "city": (placeHolder[m]).reduce((firstElement, secondElement) => firstElement + secondElement) / placeHolder[m].length, "highway": (highwaympg[m]).reduce((firstElement, secondElement) => firstElement + secondElement) / highwaympg[m].length }, "nonhybrid": { "city": (nonplaceHolder[m]).reduce((firstElement, secondElement) => firstElement + secondElement) / nonplaceHolder[m].length, "highway": (nonhighwaympg[m]).reduce((firstElement, secondElement) => firstElement + secondElement) / nonhighwaympg[m].length } }
             }
 
 
