@@ -115,13 +115,19 @@ export const moreStats = {
             let toReturn = []
             let stats = [] // will be a list with two lists each containing the respective highway vs nothypbrid.
             let hybridnonhybridstats = []
-            let placeHolder = {} // lets store in this the city_mpg if not hybrid
+            let placeHolder = {} // lets store in this the city_mpg if  hybrid
+            let highwaympg = {} // Store highway mpg for hybrid
             for (let i = 0; i < mpg_data.length; i++) {
                 if (mpg_data[i].hybrid) {
                     if (!(mpg_data[i].year in placeHolder)) {
                         placeHolder[mpg_data[i].year] = [mpg_data[i].city_mpg];
                     } else {
                         placeHolder[mpg_data[i].year].push(mpg_data[i].city_mpg);
+                    }
+                    if (!(mpg_data[i].year in highwaympg)) {
+                        highwaympg[mpg_data[i].year] = [mpg_data[i].highway_mpg];
+                    } else {
+                        highwaympg[mpg_data[i].year].push(mpg_data[i].highway_mpg);
                     }
                 }
             }
