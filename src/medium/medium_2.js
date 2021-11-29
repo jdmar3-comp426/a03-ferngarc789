@@ -112,10 +112,10 @@ export const moreStats = {
             let carMakes = [] // "hybrids": carMakes
             let placeHolder = {}
             for (let i = 0; i < mpg_data.length; i++) {
-                if (!(mpg_data[i].make in placeHolder)) {
-                    placeHolder[mpg_data[i].make] = [mpg_data[i].id];
+                if (!(mpg_data[i].year in placeHolder)) {
+                    placeHolder[mpg_data[i].year] = [mpg_data[i].city_mpg];
                 } else {
-                    placeHolder[mpg_data[i].make].push(mpg_data[i].id);
+                    placeHolder[mpg_data[i].make].push(mpg_data[i].city_mpg);
                 }
             }
             for (let m in placeHolder) {
