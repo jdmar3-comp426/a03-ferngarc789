@@ -86,7 +86,7 @@ export function searchName(car_data, searchTerm) {
     }
     returningArray.sort(
         function (firstOne, SecondOne) {
-            return firstOne.indexOf(searchTerm) - SecodnOne.indexOf(searchTerm)
+            return firstOne.indexOf(searchTerm) - SecondOne.indexOf(searchTerm)
         }
     )
     return returningArray
