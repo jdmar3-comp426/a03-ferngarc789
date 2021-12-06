@@ -1,4 +1,5 @@
-import {variance} from "./data/stats_helpers.js";
+import { maxAndMin } from "../mild/mild_1.js";
+import { variance } from "./data/stats_helpers.js";
 
 /**
  * Gets the sum of an array of numbers.
@@ -8,7 +9,11 @@ import {variance} from "./data/stats_helpers.js";
  * prototype functions. Very useful
  */
 export function getSum(array) {
-
+    let i = 0
+    for (let n = 0; n < array.length; n++) {
+        i += array[n];
+    }
+    return i
 }
 
 
@@ -22,7 +27,27 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
+    let y = []
+    let copy = Object.assign({}, array)
 
+    for (let i = 0; i < Object.keys(copy).length; i++) {
+        let lowest = array[0]
+
+        for (let n = 0; n < array.length; n++) {
+            if (array[n] < lowest) {
+                lowest = array[n]
+            }
+        }
+        y[i] = lowest
+        array.splice(array.indexOf(lowest), 1)
+    }
+
+    if (y.length % 2 == 0) {
+        return ((y[y.length / 2] + y[(y.length / 2) - 1]) / 2)
+    } else {
+        return (y[(y.length / 2) + .5])
+
+    }
 }
 
 /**
@@ -45,6 +70,48 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
+    let lowest = array[0]
+    let highest = array[0]
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > highest) {
+            highest = array[i]
+        } else if (array[i] < lowest) {
+            lowest = array[i]
+        }
 
+    }
+    let returning = {
+        max: Number(highest),
+        min: Number(lowest)
+    }
+
+
+
+
+    let i = [];
+    for (let n = 0; n < array.length; n++) {
+        i[n] = array[n];
+    }
+
+
+
+    let newObject = {}
+    newObject["length"] = array.length
+    newObject["sum"] = getSum(array)
+    newObject["mean"] = (getSum(array) / array.length)
+    newObject["median"] = getMedian(array)
+    newObject["min"] = returning["min"]
+    newObject["max"] = (returning.max)
+
+
+    newObject["variance"] = i.map(function (element) {
+        return Math.pow(Number(getSum(i) / i.length) - element, 2)
+    }).reduce(function sum(m, v) {
+        m += v;
+        return m;
+    }, 0) / i.length;
+
+    newObject["standard_deviation"] = Math.sqrt(newObject["variance"])
+    return newObject
 }
 
